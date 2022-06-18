@@ -10,17 +10,14 @@ openButton.addEventListener('click', e => {
   modal.classList.add('open')
   overlay.classList.add('open')
 
-  // remoce click listener for the closeButton
-  closeButton.addEventListener('click', e => {
-    e.preventDefault()
-    modal.classList.remove('open')
-    overlay.classList.remove('open')
-  })
+  // remove click listener for the closeButton
+  closeButton.addEventListener('click', closeModal)
 
   // remove click listener for the overlay
-  overlay.addEventListener('click', e => {
-    e.preventDefault()
-    modal.classList.remove('open')
-    overlay.classList.remove('open')
-  })
+  overlay.addEventListener('click', closeModal)
 })
+
+function closeModal() {
+  modal.classList.remove('open')
+  overlay.classList.remove('open')
+}
